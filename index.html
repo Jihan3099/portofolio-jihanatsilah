@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jihan Atsilah Siregar</title>
+<meta name="description" content="Portfolio of Jihan Atsilah Siregar, digital communication and marketing professional based in Jakarta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE  occasion: a personal site for corporate recruiters, bright and confident, finished like a product page
+   IDEA   her portfolio as a sunny communications dashboard: a framed sky window with hills, task-style cards, pill-boxed headline words
+   PICTURE the hero window itself: sky, rolling hills and floating dashboard cards (current role, research, education, photo, quick links)
+   COLOUR white page, sky blue window, grass green hills, lime and sunflower yellow accents, near-black ink; night sky in dark theme
+   TYPE   Instrument Serif for greetings and big figures (echoes her italic-serif portfolio), Inter Tight for headline pills and text
+   LAYOUT laptop: hero window with 3 dashboard columns; then statement + 3 photo cards, results grid, experience timeline, work grid, videos, research, skills, contact window. Phone: one column, title, photo, cards */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0a0f1a);--ink:light-dark(#0f1720,#eef3fa);--mute:light-dark(#4c5866,#a9b6c6);
+--card:light-dark(#ffffff,#131d2e);--soft:light-dark(#f1f7fd,#152238);--line:light-dark(#dde7f1,#26354d);
+--sky1:light-dark(#9fcdf3,#0b1630);--sky2:light-dark(#dcefff,#1c2f55);
+--h1:light-dark(#b9dc8c,#1d3b2b);--h2:light-dark(#8cc663,#17311f);--h3:light-dark(#62a83f,#10261a);
+--blue:light-dark(#a8d2f7,#2b5590);--blueink:light-dark(#1b4f8f,#bcdcff);--lime:#cdf26e;--sun:#f8c93c;--dark:light-dark(#0f1720,#eef3fa);--onDark:light-dark(#fff,#0f1720)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Inter Tight",system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(40px,6vw,88px);padding-inline:max(4vw,16px)}
+.window{position:relative;margin:max(1.2vw,10px);border-radius:clamp(20px,3vw,36px);overflow:hidden;background:linear-gradient(180deg,var(--sky1),var(--sky2) 75%)}
+.cloud{position:absolute;border-radius:50%;background:light-dark(#fff,#2a3d66);opacity:.75;filter:blur(18px);pointer-events:none}
+.hills{position:absolute;left:0;right:0;bottom:0;height:min(34%,300px);width:100%;pointer-events:none}
+.hills .a{fill:var(--h1)}.hills .b{fill:var(--h2)}.hills .c{fill:var(--h3)}
+nav{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:18px clamp(16px,3vw,32px)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;margin-right:auto}
+.logo svg{width:26px;height:26px}
+.links{display:flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:99px;background:color-mix(in srgb,var(--card) 70%,transparent)}
+.links a{padding:8px 14px;border-radius:99px;text-decoration:none;font-size:15px}
+.links a:hover{background:var(--card)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 20px;border-radius:99px;font:600 15px "Inter Tight",sans-serif;text-decoration:none;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.btn.dark{background:var(--dark);color:var(--onDark);border-color:var(--dark)}
+.btn .dot{width:9px;height:9px;border-radius:50%;background:var(--blue)}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--blueink);outline-offset:3px}
+.hero{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:center;padding:8px clamp(20px,4vw,56px) clamp(70px,9vw,130px)}
+.hello{display:flex;align-items:center;gap:14px;font-size:clamp(30px,3.4vw,44px);line-height:1.05}
+.hello img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid var(--card)}
+.pills{font-size:clamp(30px,3.6vw,50px);line-height:1.15;letter-spacing:-.02em;font-weight:500;margin:20px 0 18px}
+.pill{display:inline-block;border:2px solid currentColor;border-radius:99px;padding:0 .32em .06em}
+.pill.fill{background:var(--card);border-color:var(--card)}
+.arrow{display:inline-grid;place-items:center;width:1.15em;height:1.15em;border-radius:50%;background:var(--blue);color:var(--blueink);font-size:.8em;vertical-align:middle}
+.intro{max-width:32em;color:var(--ink);font-size:17px;margin-bottom:16px}
+.look{display:inline-flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;background:color-mix(in srgb,var(--card) 75%,transparent);border-radius:16px;padding:10px 14px;margin-bottom:22px;font-size:15px;max-width:34em}
+.look b{background:var(--lime);color:#14210a;border-radius:99px;padding:1px 10px;font-size:13px}
+.cta{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.card{background:var(--card);border-radius:22px;padding:18px 20px;box-shadow:0 1px 0 var(--line),0 10px 30px -18px rgb(20 60 110/.35)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 11px;border-radius:99px;font-size:13px;font-weight:600;background:var(--soft);color:var(--ink);white-space:nowrap}
+.chip.r{background:#ffd9d2;color:#8a1f0e}
+.stage{position:relative;margin-inline:24px}
+.photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--soft);box-shadow:0 20px 40px -24px rgb(20 60 110/.5)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+.photo .chip{position:absolute;left:14px;top:14px;background:var(--card)}
+.photo .name{position:absolute;left:14px;right:14px;bottom:14px;background:var(--card);border-radius:16px;padding:10px 14px;font-size:14px}
+.photo .name b{display:block;font-size:16px}
+.sticker{position:absolute;border-radius:20px;padding:12px 16px;box-shadow:0 14px 30px -16px rgb(20 40 70/.55);max-width:13em}
+.sticker strong{display:block;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(34px,3.2vw,44px);line-height:1;white-space:nowrap}
+.sticker span{display:block;font-size:13.5px;font-weight:500;margin-top:4px}
+.s1{background:var(--lime);color:#14210a;left:-34px;top:56%;transform:rotate(-4deg)}
+.s2{background:var(--sun);color:#1d1500;right:-26px;top:36%;transform:rotate(3deg)}
+@media (prefers-reduced-motion:no-preference){.s1{animation:bob 6s ease-in-out infinite}@keyframes bob{50%{transform:rotate(-4deg) translateY(-8px)}}}
+.edu{background:var(--sun);color:#1d1500;border-radius:22px;padding:18px 20px;margin-top:26px}
+.edu .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:10px}
+.edu strong{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:42px;line-height:1;display:block}
+.edu span{font-size:14px;display:block}
+.state{font-size:clamp(28px,3.4vw,46px);line-height:1.18;letter-spacing:-.02em;font-weight:500;max-width:22em}
+.state .pill{padding:0 .28em .04em;border-width:1.5px}
+.state .pill.bl{background:var(--blue);border-color:var(--blue);color:var(--blueink)}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px;margin-bottom:28px}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pillar{position:relative;border-radius:24px;overflow:hidden;color:#0f1720;display:flex;flex-direction:column}
+.pillar .shot{position:relative;height:210px;overflow:hidden;background:#fff}
+.pillar .shot .chip{position:absolute;left:14px;top:14px;z-index:1}
+.pillar .txt{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.pillar img{width:100%;height:100%;object-fit:cover;object-position:top}
+.pillar .chip{background:#fff;color:#0f1720}
+.pillar h3{font-size:clamp(24px,2.3vw,30px);line-height:1.1;font-weight:600}
+.pillar p{font-size:15px;margin:6px 0 12px;max-width:24em}
+.pillar button{margin-top:auto;align-self:flex-start;min-height:40px;border:0;border-radius:99px;padding:8px 16px;font:600 14px "Inter Tight",sans-serif;background:#0f1720;color:#fff;cursor:pointer}
+.pillar.b1{background:#8cc4f2}.pillar.b2{background:#cdf26e}.pillar.b3{background:#f8c93c}
+h2{font-size:clamp(34px,4vw,52px);line-height:1.05;letter-spacing:-.01em}
+.sub{color:var(--mute);max-width:40em;margin-top:8px}
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.num{background:var(--soft);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.num strong{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(40px,4vw,56px);line-height:1}
+.num:nth-child(2),.num:nth-child(8){background:var(--lime);color:#14210a}.num:nth-child(2) .from,.num:nth-child(8) .from{color:#3a4f1c}
+.grp{grid-column:1/-1;font-size:15px;font-weight:600;margin:10px 0 -2px}
+.grp:first-child{margin-top:0}
+.num .from{margin-top:auto;font-size:13px;font-weight:600;color:var(--mute)}
+.exp{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2fr);gap:clamp(24px,4vw,56px)}
+.exp aside{align-self:start}
+@media(min-width:900px){.exp aside{position:sticky;top:24px}}
+.role{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:8px 22px;padding:22px 0;border-top:1px solid var(--line)}
+.role:first-child{border-top:0;padding-top:0}
+.when{font-family:"Instrument Serif",Georgia,serif;font-size:22px;line-height:1.15}
+.role h3{font-size:20px;font-weight:600;line-height:1.25}
+.org{color:var(--mute);margin:2px 0 8px;font-size:15px}
+.role ul{margin:8px 0 0;padding-left:18px;display:grid;gap:4px;font-size:15.5px}
+.orgs{margin-top:26px;padding:18px 20px;border-radius:22px;background:var(--card)}
+.role .chip{background:var(--card)}
+.orgs p{font-size:15px;margin-top:8px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.filters button{min-height:42px;padding:8px 16px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:600 14px "Inter Tight",sans-serif;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--dark);color:var(--onDark);border-color:var(--dark)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;grid-auto-flow:dense}
+.work{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.work .pic{position:relative;aspect-ratio:4/3;min-height:0;overflow:hidden;background:var(--soft);display:flex;gap:6px;padding:0}
+.work .pic img{min-width:0;min-height:0}
+.work .pic img{flex:1;width:100%;height:100%;object-fit:cover;object-position:top}
+.work .pic.fit{padding:14px}.work .pic.fit img{object-fit:contain;object-position:center}
+.work .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.work .tags{display:flex;flex-wrap:wrap;gap:6px}
+.work h3{font-size:19px;font-weight:600;line-height:1.25}
+.work p{font-size:15px;color:var(--mute)}
+.res{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:2px;font-size:14.5px}
+.res li{display:flex;gap:10px;justify-content:space-between;border-top:1px dashed var(--line);padding-top:5px}
+.res b{white-space:nowrap;font-variant-numeric:tabular-nums}
+.go{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:auto;padding-top:6px;font-size:14px;font-weight:600}
+.go a{color:var(--blueink)}
+.work.wide{grid-column:span 2}
+.work[hidden]{display:none}
+.conf{position:absolute;left:12px;bottom:12px;z-index:1;background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;font-size:13px;font-weight:600}
+.cases{display:grid;gap:18px;margin-bottom:56px}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(20px,3vw,40px);padding:clamp(16px,2vw,24px);border-radius:28px;background:var(--soft)}
+.case:nth-child(even) .gal{order:2}
+.gal img.c{object-fit:contain;padding:8px}
+.gal{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:8px;min-height:300px;contain:size}
+.gal.rows{grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(3,minmax(0,1fr))}
+.gal.g3{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
+.gal.g3 img:first-child{grid-row:1/3}
+.gal.g4{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+.gal img{width:100%;height:100%;min-height:0;object-fit:cover;object-position:top;border-radius:16px;background:var(--card)}
+.gal.rows img{object-position:center}
+.gal .conf{bottom:14px;left:14px}
+.ctext{display:flex;flex-direction:column;gap:12px;padding-block:6px}
+.ctext .tags{display:flex;flex-wrap:wrap;gap:6px}
+.ctext .chip{background:var(--card)}
+.ctext h3{font-size:clamp(24px,2.4vw,32px);line-height:1.1;letter-spacing:-.01em;font-weight:600}
+.ctext dl{margin:0;display:grid;gap:10px}
+.ctext dt{font-weight:600;font-size:14px}
+.ctext dd{margin:0;font-size:15.5px;color:var(--mute)}
+.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.figs div{background:var(--card);border-radius:16px;padding:12px 14px}
+.figs strong{display:block;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(28px,2.6vw,36px);line-height:1}
+.figs span{font-size:13.5px;display:block;margin-top:4px}
+.more{font-size:clamp(28px,3vw,36px);line-height:1.1;margin-bottom:16px}
+.earlier{margin-top:44px;border-top:1.5px solid var(--ink);padding-top:18px}
+.earlier h3{font-size:clamp(28px,3vw,36px);line-height:1.1;margin-bottom:6px}
+.erow{display:grid;grid-template-columns:7em minmax(0,1.1fr) minmax(0,1.6fr);gap:6px 24px;padding:14px 0;border-top:1px solid var(--line);align-items:baseline}
+.erow:first-child{border-top:0}
+.erow .y{font-family:"Instrument Serif",Georgia,serif;font-size:21px;white-space:nowrap}
+.erow b{font-weight:600;font-size:16.5px;display:block}
+.erow .o{color:var(--mute);font-size:14.5px}
+.erow p{font-size:15px;color:var(--mute)}
+.work.wide .pic{aspect-ratio:auto;height:280px;padding:14px;gap:12px}
+.work.wide .pic img{border-radius:12px;object-fit:cover}
+.reels{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:12px}
+.reel{text-decoration:none;display:flex;flex-direction:column;gap:8px}
+.reel .ph{border-radius:20px;overflow:hidden;aspect-ratio:9/19;background:#111;border:3px solid #111}
+.reel img{width:100%;height:100%;object-fit:cover}
+.reel span{font-size:13.5px;line-height:1.3}
+.reel b{display:block;font-size:12px;color:var(--blueink)}
+.rhead{display:flex;gap:14px;font-weight:600;margin-bottom:10px;font-size:15px}
+.rhead span:first-child{flex:4}.rhead span:last-child{flex:5}
+.research{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);border-radius:28px;overflow:hidden;background:var(--dark);color:var(--onDark)}
+.research .txt{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;gap:14px}
+.research h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1.1}
+.research .btn{border-color:var(--onDark);color:var(--onDark);align-self:flex-start}
+.fig{position:relative;min-height:320px;background:color-mix(in srgb,var(--onDark) 6%,var(--dark))}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.skills .card{box-shadow:none;border:1px solid var(--line)}
+.skills .card.big{grid-column:span 3;background:var(--soft);border:0}
+.skills h3{font-size:18px;font-weight:600;margin-bottom:12px}
+.skills .card.ai{grid-column:span 3}
+.aig{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.aig div{background:var(--soft);border-radius:16px;padding:14px 16px}
+.aig b{font-size:16px}
+.aig p{font-size:15px;color:var(--mute);margin-top:4px}
+.tags2{display:flex;flex-wrap:wrap;gap:8px}
+.tags2 span{border:1.5px solid var(--ink);border-radius:99px;padding:5px 14px;font-size:15px}
+.tags2.soft span{border:0;background:var(--soft);font-size:14px}
+.certs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.cert{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:18px}
+.cert img{border-radius:8px;aspect-ratio:4/3;object-fit:cover}
+.cert b{display:block;font-size:15px;line-height:1.3}
+.cert span{font-size:13.5px;color:var(--mute)}
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;padding:clamp(28px,5vw,64px) clamp(16px,4vw,56px) clamp(110px,14vw,190px);position:relative;z-index:1}
+.contact .pills{margin-top:0}
+.contact .card a{word-break:break-word}
+.crow{display:grid;grid-template-columns:7em minmax(0,1fr);gap:10px;padding:12px 0;border-top:1px solid var(--line);font-size:15.5px;align-items:center}
+.crow:first-child{border-top:0}
+.crow b{color:var(--mute);font-weight:500;font-size:14px}
+.copy{margin-left:8px;min-height:32px;padding:2px 12px;border-radius:99px;border:1.5px solid var(--line);background:var(--soft);color:var(--ink);font:600 13px "Inter Tight",sans-serif;cursor:pointer}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:18px max(4vw,16px) 26px;font-size:14px;color:var(--mute)}
+@media(max-width:1100px){.reels{grid-template-columns:repeat(5,minmax(0,1fr))}.rhead{display:none}}
+@media(max-width:980px){
+.nums{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.certs{grid-template-columns:repeat(2,minmax(0,1fr))}.research{grid-template-columns:minmax(0,1fr)}}
+.hero{}
+@media(max-width:760px){.case{grid-template-columns:minmax(0,1fr)}.case:nth-child(even) .gal{order:0}.gal{min-height:340px}.gal.rows{min-height:420px}.hero{grid-template-columns:minmax(0,1fr)}.stage{max-width:520px}.pillars,.skills,.exp,.contact{grid-template-columns:minmax(0,1fr)}.skills .card.big,.skills .card.ai{grid-column:auto}.aig{grid-template-columns:minmax(0,1fr)}.links{order:3;width:100%;justify-content:space-between;overflow-x:auto;flex-wrap:nowrap}.links a{flex:none;padding:8px 10px}}
+@media(max-width:600px){
+.hero{grid-template-columns:minmax(0,1fr)}.stage{margin-inline:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.photo{grid-column:1/-1}.sticker{position:static;max-width:none;padding:10px 14px}.sticker strong{font-size:28px;white-space:normal}.s1{transform:rotate(-2deg);animation:none}.s2{transform:rotate(2deg)}
+.grid,.certs{grid-template-columns:minmax(0,1fr)}.work.wide{grid-column:auto}.work.wide .pic{height:200px}
+.role{grid-template-columns:minmax(0,1fr)}.figs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.erow{grid-template-columns:minmax(0,1fr);gap:2px}.when{font-size:19px}
+.reels{display:flex;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}.reel{flex:none;width:42%;scroll-snap-align:start}
+.meta{grid-template-columns:repeat(2,minmax(0,1fr))}.crow{grid-template-columns:minmax(0,1fr);gap:2px}.cert{grid-template-columns:90px minmax(0,1fr)}}
+</style>
+</head>
+<body>
+
+<header class="window" id="top">
+  <div class="cloud" style="width:340px;height:90px;left:8%;top:120px"></div>
+  <div class="cloud" style="width:420px;height:110px;right:6%;top:300px"></div>
+  <div class="cloud" style="width:260px;height:70px;left:44%;top:40px"></div>
+  <svg class="hills" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path class="a" d="M0 150 C220 70 420 80 640 140 C860 200 1080 70 1440 110 V300 H0Z"/>
+    <path class="b" d="M0 210 C260 150 470 170 700 210 C930 250 1150 160 1440 190 V300 H0Z"/>
+    <path class="c" d="M0 262 C300 230 560 250 820 268 C1080 286 1260 248 1440 256 V300 H0Z"/>
+  </svg>
+  <nav aria-label="Main">
+    <a class="logo" href="#top" aria-label="Jihan Atsilah Siregar, home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 1c1.6 7.2 4.8 10.4 12 12-7.2 1.6-10.4 4.8-12 12-1.6-7.2-4.8-10.4-12-12C8.2 11.4 11.4 8.2 13 1z" fill="currentColor"/></svg>
+      Jihan Atsilah Siregar
+    </a>
+    <div class="links">
+      <a href="#results">Results</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#videos">Videos</a><a href="#research">Research</a><a href="#skills">Skills</a>
+    </div>
+    <a class="btn dark" href="#contact">Let's talk <span class="dot"></span></a>
+  </nav>
+
+  <div class="hero">
+    <div class="lead">
+      <p class="hello serif"><img src="avatar.webp" alt="">Hi, I'm Jihan!</p>
+      <h1 class="pills">I grow audiences with <span class="pill">strategy</span>, <span class="pill">content</span> &amp; <span class="pill fill">data</span> <span class="arrow" aria-hidden="true">→</span></h1>
+      <p class="intro">Digital communication and marketing professional with 5 years across government, tech, media and fashion. Now shaping public education on waste at Indonesia's Ministry of Environment.</p>
+      <p class="look"><b>Looking for</b> Corporate Communication, Digital Marketing Communication and Communication Specialist roles</p>
+      <div class="cta"><a class="btn dark" href="#work">See my work <span class="dot"></span></a><a class="btn" href="https://drive.google.com/drive/folders/1fBZTJjkxLQq3KhFEVg8Jywo_3SjWQWXD?usp=share_link">Download CV ↓</a></div>
+    </div>
+    <div class="stage">
+      <div class="photo">
+        <img src="photo.webp" alt="Jihan Atsilah Siregar in a garden, pointing at the camera">
+        <span class="chip"><span style="width:8px;height:8px;border-radius:50%;background:#3fae2a"></span>Now at Waste Crisis Center, KLH</span>
+        <div class="name"><b>Jihan Atsilah Siregar</b>Digital Communication &amp; Marketing · Jakarta</div>
+      </div>
+      <div class="sticker s1"><strong>+1,100%</strong><span>Instagram reach in 8 months, to 64.7K accounts</span></div>
+      <div class="sticker s2"><strong>4K → 18K</strong><span>Instagram followers in a year</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="band" aria-labelledby="what">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="what" class="state">I help <span class="pill">brands</span> and <span class="pill">public institutions</span> turn <span class="pill bl">audience insight</span> into content people act on.</h2>
+      <a class="btn" href="#work">Browse all work <span class="dot"></span></a>
+    </div>
+    <div class="pillars">
+      <article class="pillar b1"><div class="shot"><span class="chip">Plan</span><img src="strategy-work.webp" alt="Content calendar, competitor comparison and performance analysis pages"></div>
+        <div class="txt"><h3>Strategy &amp; campaigns</h3><p>Marketing plans, editorial calendars, KOL programs and integrated campaigns.</p><button type="button" data-go="strategy">Explore</button></div></article>
+      <article class="pillar b2"><div class="shot"><span class="chip">Measure</span><img src="asri-dashboard.webp" alt="Rekap Sosmed Indonesia ASRI dashboard with six-week views and engagement"></div>
+        <div class="txt"><h3>Media analytics &amp; reporting</h3><p>Monitoring, sentiment analysis and performance dashboards, like the weekly recap of Indonesia ASRI's four accounts.</p><button type="button" data-go="analytics">Explore</button></div></article>
+      <article class="pillar b3"><div class="shot"><span class="chip">Create</span><img src="easea-campaign-1.webp" alt="" style="object-position:center 30%"></div>
+        <div class="txt"><h3>Content &amp; creative</h3><p>Copywriting, short video, on-camera talent, voice-over and design.</p><button type="button" data-go="content">Explore</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="results" style="padding-top:0" aria-labelledby="rh">
+  <div class="wrap">
+    <div class="head"><div><h2 id="rh" class="serif">Results at a glance</h2><p class="sub">Clicks and traffic first, then audience growth, each with where it happened.</p></div></div>
+    <div class="nums" id="nums"></div>
+  </div>
+</section>
+
+<section class="band" id="experience" style="background:var(--soft)" aria-labelledby="eh">
+  <div class="wrap exp">
+    <aside>
+      <h2 id="eh" class="serif">Experience</h2>
+      <p class="sub">From freelance writing in 2020 to leading public-education communication for a national ministry.</p>
+      <div class="edu">
+        <div style="display:flex;justify-content:space-between;gap:10px;font-weight:600">Education <span class="chip" style="background:#fff7d6">Telkom University</span></div>
+        <div class="row">
+          <div><strong>3.84</strong><span>Master's GPA, Communication Studies (Media Culture), 2022–2024</span></div>
+          <div><strong>3.80</strong><span>Bachelor's GPA, Communication Studies (Marketing Communication), 2017–2021</span></div>
+        </div>
+      </div>
+      <div class="orgs">
+        <b>Organizations</b>
+        <p><b>Head of Strategic Action &amp; Research</b><br>BEM, Faculty of Communication &amp; Business, Telkom University · Feb 2019 – Jan 2020</p>
+        <p><b>Social Media Team &amp; Scriptwriter</b><br>Mustika Tasikmalaya · Jan – Dec 2019</p>
+      </div>
+    </aside>
+    <div id="roles"></div>
+  </div>
+</section>
+
+<section class="band" id="work" aria-labelledby="wh">
+  <div class="wrap">
+    <div class="head"><div><h2 id="wh" class="serif">Case studies</h2><p class="sub">Four roles, one project each in depth: the problem, what I did, what the data showed and the result.</p></div></div>
+    <div class="cases">
+      <article class="case">
+        <div class="gal g3"><img src="klh-2.webp" alt="Instagram post quoting a neighbourhood head about piled-up waste"><img src="klh-1.webp" alt="Jakarta vs Everybody Sampah post"><img src="klh-3.webp" alt="Illustrated post of two residents walking"></div>
+        <div class="ctext">
+          <div class="tags"><span class="chip">Waste Crisis Center, Ministry of Environment</span><span class="chip">2026 – now</span></div>
+          <h3>Making waste education travel further</h3>
+          <dl>
+            <div><dt>Challenge</dt><dd>Waste is an issue many people scroll past. The goal is public awareness and behaviour change, not just views.</dd></div>
+            <div><dt>What I did</dt><dd>Planned, wrote and produced content for Instagram, YouTube and TikTok, and co-published posts with DLH DKI Jakarta, DLH Depok, community account @jakartasadarsampah and creator @taufiqyusuf. I also built a six-week recap dashboard for the four Indonesia ASRI accounts (Instagram, Facebook, TikTok, YouTube) to guide the content team.</dd></div>
+            <div><dt>What the data showed</dt><dd>The creator collaboration drew about four times the views of the agency co-posts, pointing to creators as the stronger route to public reach. The recap showed Instagram drove 63% of all views, led by field coverage and partner collaboration Reels.</dd></div>
+          </dl>
+          <div class="figs"><div><strong>16,514</strong><span>views with a creator</span></div><div><strong>69,558</strong><span>views across 4 accounts in 6 weeks</span></div><div><strong>2,173</strong><span>interactions in the same period</span></div></div>
+          <div class="go"><a href="https://www.instagram.com/p/Dc-FzafE87i/">Creator post ↗</a><a href="https://www.instagram.com/p/Dcxdlu2kVue/">DLH DKI post ↗</a><a href="https://www.instagram.com/p/DcSUn8HDPM2/">DLH Depok post ↗</a></div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="gal g4"><img src="email-2.webp" alt="Deltadata webinar email newsletter"><img src="linkedin.webp" alt="Deltadata LinkedIn post: Meet Aysia, from UI/UX intern to employee"><img class="c" src="deltadata-ig.webp" alt="Instagram insights for Deltadata"><img class="c" src="linkedin-admin.webp" alt="Deltadata LinkedIn page admin view with a post by Jihan Atsilah Siregar"></div>
+        <div class="ctext">
+          <div class="tags"><span class="chip">Deltadata Mandiri</span><span class="chip">2024 – 2026</span></div>
+          <h3>Growing an IT company's reach across four channels</h3>
+          <dl>
+            <div><dt>Challenge</dt><dd>The company's public-facing channels started from low reach. The task was wider distribution and more engagement across Instagram, LinkedIn, email and paid ads.</dd></div>
+            <div><dt>What I did</dt><dd>Set up content calendars and competitor analysis, wrote targeted messaging for each platform, ran integrated campaigns across Instagram, LinkedIn, email newsletters and Meta Ads, and reviewed performance continuously to adjust the plan.</dd></div>
+            <div><dt>What the data showed</dt><dd>Weekly reviews linked the biggest jumps in reach and impressions to more frequent, better-timed posting. Email kept a 15.9–19.8% click-to-open rate with unsubscribes under 0.7%, a sign of a relevant, healthy list.</dd></div>
+          </dl>
+          <div class="figs"><div><strong>93,069</strong><span>Instagram impressions in 8 months</span></div><div><strong>3,413</strong><span>profile visits, up 62.2%</span></div><div><strong>864</strong><span>content interactions, up 100%</span></div></div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="gal rows"><img src="mnc-looker-blur.webp" alt="Blurred media monitoring dashboard"><img src="mnc-3-blur.webp" alt="Blurred weekly report cover"><img src="mnc-2-blur.webp" alt="Blurred campaign deck cover"><span class="conf">Internal documents, blurred</span></div>
+        <div class="ctext">
+          <div class="tags"><span class="chip">MNC Group</span><span class="chip">2023 – 2024</span></div>
+          <h3>Keeping leadership ahead of the media cycle</h3>
+          <dl>
+            <div><dt>Challenge</dt><dd>The Chairman and VIP executives needed a clear, regular picture of how they were covered across news and social media.</dd></div>
+            <div><dt>What I did</dt><dd>Monitored news and social coverage, wrote weekly and monthly reports on trends and sentiment with recommendations, built a Looker Studio dashboard of three months of reach, sentiment and audience demographics, and developed a 360° campaign and media plan for a national event.</dd></div>
+            <div><dt>Outcome</dt><dd>Leadership got decision-ready updates on a fixed rhythm, and the insights fed straight into the social media and marketing teams' communication strategy.</dd></div>
+          </dl>
+          <div class="figs"><div><strong>Weekly</strong><span>and monthly reports</span></div><div><strong>3 months</strong><span>of data in one dashboard</span></div><div><strong>360°</strong><span>campaign and media plan</span></div></div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="gal g3"><img src="easea-product.webp" alt="Product video still of the Rebecca Corduroy Jacket"><img src="easea-campaign-2.webp" alt="Self-love campaign post"><img src="tiktok-1.webp" alt="TikTok video with 501.1K views"></div>
+        <div class="ctext">
+          <div class="tags"><span class="chip">Easea.co</span><span class="chip">2021 – 2023</span></div>
+          <h3>Growing a fashion brand from 4K to 18K followers</h3>
+          <dl>
+            <div><dt>Challenge</dt><dd>Raise brand visibility, engagement and conversions on Instagram with both organic and paid content.</dd></div>
+            <div><dt>What I did</dt><dd>Built yearly and monthly editorial plans around content pillars (product knowledge, engagement, buyer testimonials) and campaigns, wrote 300+ briefs and captions, ran projects with 100+ KOLs, launched the brand's TikTok and ran Facebook ads to the marketplace.</dd></div>
+            <div><dt>What the data showed</dt><dd>Short video carried reach: one product video reached 110,356 people and the top TikTok passed 501K views.</dd></div>
+          </dl>
+          <div class="figs"><div><strong>2.3M</strong><span>Instagram reach in a year</span></div><div><strong>4,141</strong><span>TikTok followers from zero</span></div><div><strong>85.3K</strong><span>TikTok likes from 103 videos</span></div></div>
+          <div class="go"><a href="https://www.instagram.com/reel/CjVAAJlgAI1/">Product video ↗</a></div>
+        </div>
+      </article>
+    </div>
+    <h3 class="more serif">More projects</h3>
+    <div class="filters" role="group" aria-label="Filter projects" id="filters"></div>
+    <div class="grid" id="grid"></div>
+    <div class="earlier">
+      <h3 class="serif">Earlier work</h3>
+      <div id="earlier"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="videos" style="background:var(--soft)" aria-labelledby="vh">
+  <div class="wrap">
+    <div class="head"><div><h2 id="vh" class="serif">On camera &amp; in the edit</h2><p class="sub">Talent and voice-over work, and videos I edited for entertainment and education. Each opens on Instagram.</p></div></div>
+    <div class="rhead"><span>On camera &amp; voice-over</span><span>Edited by me</span></div>
+    <div class="reels scroll" id="reels"></div>
+  </div>
+</section>
+
+<section class="band" id="research" aria-labelledby="sh">
+  <div class="wrap">
+    <div class="research">
+      <div class="txt">
+        <span class="chip r" style="align-self:flex-start">Frontiers in Communication · 2025</span>
+        <h3 id="sh">Social-mediated communication and network dynamics in online gambling discourse: a social network analysis of YouTube comments on “Indonesia Darurat Judi Online”</h3>
+        <p>Peer-reviewed article that maps how audiences talk to each other about online gambling in YouTube comment threads, using social network analysis. It reflects the research side of my Master's in Communication Studies.</p>
+        <a class="btn" href="https://www.frontiersin.org/journals/communication/articles/10.3389/fcomm.2025.1584444/full">Read the article ↗</a>
+      </div>
+      <div class="fig" aria-hidden="true"><svg id="net"></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="skills" style="padding-top:0" aria-labelledby="kh">
+  <div class="wrap">
+    <div class="head"><div><h2 id="kh" class="serif">Skills, tools &amp; certifications</h2></div></div>
+    <div class="skills">
+      <div class="card big"><h3>What I can do for you</h3>
+        <div class="tags2"><span>Communication strategy</span><span>Social media strategy</span><span>Campaign management</span><span>Content development</span><span>Digital content production</span><span>Copywriting &amp; article writing</span><span>Media monitoring</span><span>Sentiment analysis</span><span>Audience analysis</span><span>Performance reporting</span><span>Public communication</span><span>KOL &amp; influencer management</span></div></div>
+      <div class="card"><h3>Monitoring &amp; analytics</h3><div class="tags2 soft"><span>Google Analytics</span><span>Looker Studio</span><span>Meta Business Suite</span><span>Talkwalker</span><span>BuzzSumo</span><span>Hootsuite</span><span>Excel</span></div></div>
+      <div class="card"><h3>Ads &amp; social</h3><div class="tags2 soft"><span>Meta Ads</span><span>TikTok Ads</span><span>Email marketing</span><span>Instagram</span><span>TikTok</span><span>YouTube</span><span>Facebook</span><span>LinkedIn</span></div></div>
+      <div class="card"><h3>Design, video &amp; writing</h3><div class="tags2 soft"><span>Canva</span><span>CapCut</span><span>VN</span><span>Adobe Photoshop</span><span>Adobe Illustrator</span><span>Adobe Premiere Pro</span><span>KBBI</span><span>Tesaurus Tematis</span><span>Google Workspace</span></div></div>
+      <div class="card ai"><h3>AI tools</h3><p class="sub" style="margin:-6px 0 14px">I use AI to speed up research and production, and I review and edit every output myself.</p>
+        <div class="aig">
+          <div><b>ChatGPT</b><p>Image generation for content visuals, and topic research before content planning.</p></div>
+          <div><b>Claude</b><p>Video creation and web tools, such as a social media monitoring website. I built this portfolio website and performance dashboards like the six-week Indonesia ASRI social media recap with it.</p></div>
+          <div><b>Gemini</b><p>Turning still images into short videos for social media.</p></div>
+        </div></div>
+    </div>
+    <div class="certs" id="certs"></div>
+  </div>
+</section>
+</main>
+
+<section class="window" id="contact" aria-labelledby="ch">
+  <div class="cloud" style="width:380px;height:100px;left:4%;top:60px"></div>
+  <svg class="hills" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path class="a" d="M0 170 C260 100 480 120 720 160 C960 200 1160 110 1440 140 V300 H0Z"/>
+    <path class="b" d="M0 230 C300 180 520 200 760 228 C1000 256 1200 196 1440 214 V300 H0Z"/>
+    <path class="c" d="M0 270 C320 248 600 262 860 276 C1120 290 1300 262 1440 266 V300 H0Z"/>
+  </svg>
+  <div class="contact">
+    <div>
+      <h2 id="ch" class="pills"><span class="pill">Let's.</span> <span class="pill">Work.</span> <span class="pill fill">Together.</span> <span class="arrow" aria-hidden="true">→</span></h2>
+      <p class="intro">Hiring for corporate communication, digital marketing or social media? I'd be glad to talk about how I can help your team.</p>
+    </div>
+    <div class="card">
+      <div class="crow"><b>Email</b><span><a href="mailto:jihanatsilahs@gmail.com">jihanatsilahs@gmail.com</a><button class="copy" type="button" id="copy">Copy</button></span></div>
+      <div class="crow"><b>Phone / WA</b><a href="https://wa.me/6281313086176">+62 813-1308-6176</a></div>
+      <div class="crow"><b>LinkedIn</b><a href="https://www.linkedin.com/in/jihanatsilahs/">linkedin.com/in/jihanatsilahs</a></div>
+      <div class="crow"><b>Looking for</b><span>Corporate Communication, Digital Marketing Communication, Communication Specialist</span></div>
+      <div class="crow"><b>CV &amp; portfolio</b><a href="https://drive.google.com/drive/folders/1fBZTJjkxLQq3KhFEVg8Jywo_3SjWQWXD?usp=share_link">Download from Google Drive ↓</a></div>
+      <div class="crow"><b>Based in</b><span>Jakarta, Indonesia</span></div>
+    </div>
+  </div>
+</section>
+<footer><span>© 2026 Jihan Atsilah Siregar</span><a href="#top">Back to top ↑</a></footer>
+
+<script>
+{
+const IG='https://www.instagram.com/';
+const nums=[
+ ['Traffic & conversion','1,782','Link clicks in 7 days from Facebook ads, at Rp 204 per click','Easea.co'],
+ ['Traffic & conversion','598','Link clicks from Instagram in 8 months','Deltadata Mandiri'],
+ ['Traffic & conversion','474','Website taps from a single caption post','Easea.co'],
+ ['Traffic & conversion','~82K','Views driven to Kumparan.com, a top 3 traffic contributor','Kumparan.com'],
+ ['Audience & engagement','249','New Instagram followers in 8 months, up 538.5% on the previous period','Deltadata Mandiri'],
+ ['Audience & engagement','+1,000','LinkedIn followers (100%+ growth) in 8 months, with 9,597 page visitors','Deltadata Mandiri'],
+ ['Audience & engagement','58,282','Impressions from a 3-day Meta ads campaign, double the previous period','Deltadata Mandiri'],
+ ['Audience & engagement','2,580','Interactions on a single engagement-game post, with 273 comments','Easea.co']];
+document.getElementById('nums').innerHTML=nums.map((n,i)=>(i%4===0?`<h3 class="grp">${n[0]}</h3>`:'')+`<div class="num"><strong>${n[1]}</strong><span>${n[2]}</span><span class="from">${n[3]}</span></div>`).join('');
+
+const roles=[
+ ['Mar 2026 – Present','Tenaga Ahli Komunikasi, Informasi, dan Edukasi','Waste Crisis Center, Ministry of Environment (KLH/BPLH) · Jakarta','Government',['Develop communication strategies that raise public awareness and encourage behavioral change on environmental and waste management issues.','Manage YouTube, TikTok and Instagram channels: content planning, production, publishing and optimization.','Analyze performance, audience engagement and feedback to sharpen campaigns.','Monitor media coverage and public discourse, and coordinate with stakeholders on planning, distribution and outreach.']],
+ ['Oct 2024 – Mar 2026','Digital Marketing Specialist','Deltadata Mandiri · Jakarta','Technology',['Led Instagram, LinkedIn and website growth through consistent content strategy and performance optimization (results above).','Ran integrated campaigns across Meta Ads, email marketing, LinkedIn and Instagram.','Aligned digital strategy with audience insights and platform best practices.']],
+ ['Mar 2023 – Oct 2024','Media Analytic & Report Officer','MNC Group (PT MNC Asia Holding Tbk) · Jakarta','Media',['Monitored and analyzed social media and news coverage of the Chairman and VIP executives.','Produced weekly and monthly reports on media trends and sentiment with strategic recommendations.','Worked with social media and marketing teams to turn insights into actionable updates for leadership.']],
+ ['Sep 2021 – Mar 2023','Social Media Executive','Easea.co · Bandung','Fashion e-commerce',['Grew the brand\'s Instagram and built its TikTok account from zero (results above).','Managed campaigns end to end, from yearly and monthly editorial plans to optimization and reporting.','Collaborated with 100+ KOLs and influencers and several brand partners on online and offline promotions.']],
+ ['Aug – Sep 2021','Freelance Graphic Designer','Techbros.io · Düsseldorf, Germany','Design',['Designed layouts for print, web and social media and prepared production-ready files.']],
+ ['May – Aug 2021','Freelance Social Media','Kumparan.com · Jakarta','News media',['Published 10 articles a day across Facebook Groups and Pages with audience-focused captions.','Reached a top 3 traffic ranking among contributors in about four months.']],
+ ['Mar – Dec 2020','Freelance Content Writer','Bolaball Indonesia · Bekasi','Sports education',['Wrote weekly articles on football and children\'s self-development, using keyword research and SEO to grow traffic.']],
+ ['Jun – Jul 2020','Consumer Service','Telkom University','Education',[]]];
+document.getElementById('roles').innerHTML=roles.map(r=>`<div class="role"><div class="when">${r[0]}</div><div><span class="chip">${r[3]}</span><h3 style="margin-top:8px">${r[1]}</h3><p class="org">${r[2]}</p>${r[4].length?`<ul>${r[4].map(b=>`<li>${b}</li>`).join('')}</ul>`:''}</div></div>`).join('');
+
+const cats={all:'All',strategy:'Strategy',analytics:'Analytics',content:'Content',ads:'Ads & email',writing:'Writing',design:'Design'};
+const W=[
+ {t:'Meta ads sprint',o:'Deltadata Mandiri',y:'2024–2026',c:['ads'],img:['ads-meta'],fit:1,d:'A 3-day Meta Business campaign that doubled impressions, reach and engagement and drove traffic.',r:[['58,282','impressions'],['52,001','reach'],['391','link clicks']]},
+ {t:'Marketing plans and strategy decks',o:'Deltadata Mandiri',y:'2024–2026',c:['strategy'],img:['plan-1-blur','plan-2-blur'],fit:1,conf:1,d:'Integrated marketing communication plans for internal and external stakeholders, including a 360° marketing plan and a roadmap for organic Meta verification for client organizations.'},
+ {t:'Content planning and performance analysis',o:'Deltadata Mandiri',y:'2024–2026',c:['strategy','analytics'],img:['planning-1-blur'],fit:1,conf:1,d:'Monthly content calendars plus analysis of follower growth, engagement, reach and competitors to guide the next month\'s plan.'},
+ {t:'Product video: Rebecca Corduroy Jacket',o:'Easea.co',y:'2021–2023',c:['content'],img:['easea-product'],d:'Concept, filming, editing and copy for a product-knowledge video on size, color and details.',r:[['110,356','people reached'],['152','saves'],['36','shares']],l:[['Watch',IG+'reel/CjVAAJlgAI1/']]},
+ {t:'“Guess the number” engagement game',o:'Easea.co',y:'2021–2023',c:['content'],img:['easea-game'],d:'Interactive post challenging followers to count sparks in a gift box, from competitor analysis to visual concept and QC.',r:[['2,580','interactions'],['2,773','impressions'],['273','comments']]},
+ {t:'Buyer testimonial series',o:'Easea.co',y:'2021–2023',c:['content'],img:['easea-testi-2'],d:'Real buyers\' perspectives to build trust: interview questions, briefs, visual concept and QC.',r:[['4,924','people reached'],['5,577','impressions'],['132','profile visits']]},
+ {t:'Self-love and body confidence campaign',o:'Easea.co',y:'2021–2023',c:['strategy','content'],img:['easea-campaign-1','easea-campaign-2'],d:'Issue research, campaign development and creative direction around embracing personal uniqueness.',r:[['278','likes'],['92','saves']]},
+ {t:'TikTok content creation',o:'Easea.co',y:'2021–2023',c:['content'],img:['tiktok-1','tiktok-2','tiktok-3'],d:'103 videos planned and produced for the brand\'s new TikTok account.',r:[['501.1K','views on the top video'],['37.0K','likes on the top video'],['5.1K','saves on the top video']]},
+ {t:'Facebook ads to the marketplace',o:'Easea.co',y:'2021–2023',c:['ads'],img:['fbads-1','fbads-2'],d:'Research on ad trends and competitor pricing, placement choices and creative for marketplace traffic.',r:[['1,782','link clicks in 7 days'],['Rp 204','cost per click']]},
+ {t:'Ad copy and Instagram captions',o:'Easea.co',y:'2021–2023',c:['writing','ads'],img:['copy-1','copy-2','copy-3'],d:'Promo copy for flash sales and best sellers, and soft-selling captions that drove saves and site visits.',r:[['34,780','reach on one caption post'],['708','saves'],['474','website taps']]},
+ {t:'Facebook distribution for news articles',o:'Kumparan.com',y:'2021',c:['writing'],img:['kumparan-1','kumparan-2'],fit:1,d:'Captions written to pull Facebook Group and Page audiences into Kumparan articles, published 10 a day.'},
+ {t:'Graphic design for Techbros.io',o:'Techbros.io',y:'2021',c:['design'],img:['gd-1'],d:'Magazine and editorial layouts for print, web and social media, delivered as production-ready files.'}];
+const E=[['2020','SEO articles on kids\' football','Bolaball Indonesia','Weekly articles on football and children\'s self-development, guided by trending keyword research.'],
+ ['2019–2020','Articles, videos and infographics','BEM FKB Telkom University','About 50 pieces on social, political and economic topics in one year, plus the NGOPIBERKAS seminar with about 80 attendees.'],
+ ['2019','City branding on social media','Mustika Tasikmalaya','Content, captions and scheduling for online and offline campaigns. Nominated for an online campaign at Urban Village 2019.'],
+ ['2019','Drama script “Payung Geulis”','Mustika Tasikmalaya','Script for a campaign performance that won Best Performing Arts at Urban Village 2019.'],
+ ['2019','Magazine and social media design','Mustika Tasikmalaya','Magazine layouts and mobile social media visuals for the city branding campaign.'],
+ ['2018','Poem published','Pikiran Rakyat','My poem was published in the newspaper on 24 June 2018.']];
+document.getElementById('earlier').innerHTML=E.map(e=>`<div class="erow"><span class="y">${e[0]}</span><div><b>${e[1]}</b><span class="o">${e[2]}</span></div><p>${e[3]}</p></div>`).join('');
+const grid=document.getElementById('grid'),fl=document.getElementById('filters');
+const card=w=>`<article class="work${w.wide?' wide':''}" data-c="${w.c.join(' ')}"><div class="pic${w.fit&&!w.wide?' fit':''}">${w.conf?'<span class="conf">Internal document, details on request</span>':''}${w.img.map(i=>`<img src="${i}.webp" alt="">`).join('')}</div><div class="body"><div class="tags"><span class="chip">${w.o}</span><span class="chip">${w.y}</span></div><h3>${w.t}</h3><p>${w.d}</p>${w.r?`<ul class="res">${w.r.map(x=>`<li><span>${x[1]}</span><b>${x[0]}</b></li>`).join('')}</ul>`:''}${w.l?`<div class="go">${w.l.map(x=>`<a href="${x[1]}">${x[0]} ↗</a>`).join('')}</div>`:''}</div></article>`;
+grid.innerHTML=W.map(card).join('');
+fl.innerHTML=Object.entries(cats).map(([k,v])=>`<button type="button" id="f-${k}" data-f="${k}" aria-pressed="${k==='all'}">${v} <span style="opacity:.6">${k==='all'?W.length:W.filter(w=>w.c.includes(k)).length}</span></button>`).join('');
+const setF=k=>{fl.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===k));grid.querySelectorAll('.work').forEach(a=>{a.hidden=!(k==='all'||a.dataset.c.split(' ').includes(k))})};
+fl.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setF(b.dataset.f)});
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>{setF(b.dataset.go);document.getElementById('work').scrollIntoView()}));
+
+const reels=[['talent-1','Intern life skit','3,034 views','DJECn4pJxjY'],['talent-2','Office love language','1,307 views','DGCWDx-zxz0'],['talent-3','Data leak explainer','Voice-over','DC5pVgWTJe7'],['talent-4','Talking-head explainer','On camera','DIiilnWzqAE'],
+ ['video-1','Interview with PLN ICON+ Corporate Secretary','Edited','DCsgqodT5YY'],['video-2','“Pintar pintarlah”','Edited','DD3caKFTWqm'],['video-3','“Customer kena delay”','Edited','DUXQ5YoD2JD'],['video-4','“Aku suka-suka aja”','Edited','DQq2BGMj9JD'],['video-5','Guess the song, Independence Day edition','Edited','DNb_qyMSK9q']];
+document.getElementById('reels').innerHTML=reels.map(r=>`<a class="reel" href="${IG}reel/${r[3]}/"><div class="ph"><img src="${r[0]}.webp" alt=""></div><span><b>${r[2]}</b>${r[1]}</span></a>`).join('');
+
+const certs=[['cert-6','Full Stack Digital Marketing Bootcamp','Belajarlagi · Jun – Aug 2025'],['cert-2','Full Stack Digital Marketing Bootcamp','Harisenin.com · Aug – Dec 2021'],['cert-1','Copywriting: Trik Merangkai Kata untuk Tingkatkan Penjualan','Skill Academy · 2021'],['cert-3','SEO 101: Cara Membuat Website Eksis di Halaman Depan Google','Skill Academy · 2021'],['cert-4','Intro to Digital Marketing Mini Course','RevoU · 2021'],['cert-5','Google Analytics untuk Pemula','Google Analytics Academy · 2021']];
+document.getElementById('certs').innerHTML=certs.map(c=>`<div class="cert"><img src="${c[0]}.webp" alt=""><div><b>${c[1]}</b><span>${c[2]}</span></div></div>`).join('');
+
+const s=document.getElementById('net');
+const draw=()=>{const w=s.clientWidth,h=s.clientHeight;if(!w)return;let seed=7;const rnd=()=>(seed=seed*16807%2147483647)/2147483647;
+ const hubs=[[.3,.35],[.7,.3],[.5,.72]].map(p=>[p[0]*w,p[1]*h]);let e='',n='';
+ hubs.forEach((hb,i)=>{for(let k=0;k<26;k++){const a=rnd()*6.283,r=(.08+rnd()*.2)*Math.min(w,h)*1.3,x=hb[0]+Math.cos(a)*r,y=hb[1]+Math.sin(a)*r*.8;
+  e+=`<line x1="${hb[0]}" y1="${hb[1]}" x2="${x}" y2="${y}"/>`;if(rnd()<.18){const o=hubs[(i+1)%3];e+=`<line x1="${x}" y1="${y}" x2="${o[0]}" y2="${o[1]}"/>`}
+  n+=`<circle cx="${x}" cy="${y}" r="${2.5+rnd()*4}" fill="${['#a8d2f7','#cdf26e','#f8c93c'][i]}"/>`}});
+ e+=`<line x1="${hubs[0][0]}" y1="${hubs[0][1]}" x2="${hubs[1][0]}" y2="${hubs[1][1]}"/><line x1="${hubs[1][0]}" y1="${hubs[1][1]}" x2="${hubs[2][0]}" y2="${hubs[2][1]}"/><line x1="${hubs[2][0]}" y1="${hubs[2][1]}" x2="${hubs[0][0]}" y2="${hubs[0][1]}"/>`;
+ s.innerHTML=`<g stroke="currentColor" stroke-opacity=".22" stroke-width="1">${e}</g>${n}${hubs.map((hb,i)=>`<circle cx="${hb[0]}" cy="${hb[1]}" r="13" fill="${['#a8d2f7','#cdf26e','#f8c93c'][i]}" stroke="currentColor" stroke-opacity=".5" stroke-width="2"/>`).join('')}`};
+const ro=new ResizeObserver(draw);ro.observe(s);
+
+const cp=document.getElementById('copy');
+cp.addEventListener('click',()=>{const done=t=>{cp.textContent=t;setTimeout(()=>cp.textContent='Copy',1800)};try{navigator.clipboard.writeText('jihanatsilahs@gmail.com').then(()=>done('Copied'),()=>done('Select to copy'))}catch(err){done('Select to copy')}});
+}
+</script>
+</body>
+</html>
