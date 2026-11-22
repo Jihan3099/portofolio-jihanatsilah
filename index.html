@@ -247,7 +247,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding
   <div class="hero">
     <div class="lead">
       <p class="hello serif"><img src="avatar.webp" alt="">Hi, I'm Jihan!</p>
-      <h1 class="pills">I grow audiences with <span class="pill">strategy</span>, <span class="pill">content</span> &amp; <span class="pill fill">data</span> <span class="arrow" aria-hidden="true">→</span></h1>
+      <h1 class="pills">I grow audiences with <span style="white-space:nowrap"><span class="pill">strategy</span>,</span> <span class="pill">content</span> &amp; <span class="pill fill">data</span> <span class="arrow" aria-hidden="true">→</span></h1>
       <p class="intro">Digital communication and marketing professional with 5 years across government, tech, media and fashion. Now shaping public education on waste at Indonesia's Ministry of Environment.</p>
       <p class="look"><b>Looking for</b> Corporate Communication, Digital Marketing Communication and Communication Specialist roles</p>
       <div class="cta"><a class="btn dark" href="#work">See my work <span class="dot"></span></a><a class="btn" href="https://drive.google.com/drive/folders/1fBZTJjkxLQq3KhFEVg8Jywo_3SjWQWXD?usp=share_link">Download CV ↓</a></div>
@@ -466,10 +466,10 @@ const roles=[
  ['Oct 2024 – Mar 2026','Digital Marketing Specialist','Deltadata Mandiri · Jakarta','Technology',['Led Instagram, LinkedIn and website growth through consistent content strategy and performance optimization (results above).','Ran integrated campaigns across Meta Ads, email marketing, LinkedIn and Instagram.','Aligned digital strategy with audience insights and platform best practices.']],
  ['Mar 2023 – Oct 2024','Media Analytic & Report Officer','MNC Group (PT MNC Asia Holding Tbk) · Jakarta','Media',['Monitored and analyzed social media and news coverage of the Chairman and VIP executives.','Produced weekly and monthly reports on media trends and sentiment with strategic recommendations.','Worked with social media and marketing teams to turn insights into actionable updates for leadership.']],
  ['Sep 2021 – Mar 2023','Social Media Executive','Easea.co · Bandung','Fashion e-commerce',['Grew the brand\'s Instagram and built its TikTok account from zero (results above).','Managed campaigns end to end, from yearly and monthly editorial plans to optimization and reporting.','Collaborated with 100+ KOLs and influencers and several brand partners on online and offline promotions.']],
- ['Aug – Sep 2021','Freelance Graphic Designer','Techbros.io · Düsseldorf, Germany','Design',['Designed layouts for print, web and social media and prepared production-ready files.']],
- ['May – Aug 2021','Freelance Social Media','Kumparan.com · Jakarta','News media',['Published 10 articles a day across Facebook Groups and Pages with audience-focused captions.','Reached a top 3 traffic ranking among contributors in about four months.']],
- ['Mar – Dec 2020','Freelance Content Writer','Bolaball Indonesia · Bekasi','Sports education',['Wrote weekly articles on football and children\'s self-development, using keyword research and SEO to grow traffic.']],
- ['Jun – Jul 2020','Consumer Service','Telkom University','Education',[]]];
+ ['Aug – Sep 2021','Freelance Graphic Designer','Techbros.io · Düsseldorf, Germany','Design',['Turned client briefs into visual layouts for print, web and social media.','Refined designs through feedback and delivered production-ready files.']],
+ ['May – Aug 2021','Freelance Social Media','Kumparan.com · Jakarta','News media',['Published 10 articles a day to Facebook Groups and Pages with audience-focused captions.','Used content insights to plan weekly posts, reaching a top 3 traffic ranking and about 82,000 views in four months.']],
+ ['Mar – Dec 2020','Freelance Content Writer','Bolaball Indonesia · Bekasi','Sports education',['Wrote weekly articles on football knowledge for children for the company website.','Used keyword research and SEO to grow organic traffic.']],
+ ['Jun – Jul 2020','Intern in Consumer Service','PT Telkom Witel Riau Daratan · Pekanbaru','Telecommunications',['Entered and monitored 45+ consumer records in the sales system.','Drafted 3–5 internal and external official documents a week and supported marketing communication.']]];
 document.getElementById('roles').innerHTML=roles.map(r=>`<div class="role"><div class="when">${r[0]}</div><div><span class="chip">${r[3]}</span><h3 style="margin-top:8px">${r[1]}</h3><p class="org">${r[2]}</p>${r[4].length?`<ul>${r[4].map(b=>`<li>${b}</li>`).join('')}</ul>`:''}</div></div>`).join('');
 
 const cats={all:'All',strategy:'Strategy',analytics:'Analytics',content:'Content',ads:'Ads & email',writing:'Writing',design:'Design'};
