@@ -135,9 +135,11 @@ h2{font-size:clamp(34px,4vw,52px);line-height:1.05;letter-spacing:-.01em}
 .conf{position:absolute;left:12px;bottom:12px;z-index:1;background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;font-size:13px;font-weight:600}
 .cases{display:grid;gap:18px;margin-bottom:56px}
 .case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(20px,3vw,40px);padding:clamp(16px,2vw,24px);border-radius:28px;background:var(--soft)}
-.case:nth-child(even) .gal{order:2}
+.case:nth-child(even) .galw{order:2}
 .gal img.c{object-fit:contain;padding:8px}
-.gal{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:8px;min-height:300px;contain:size}
+.galw{position:relative;min-height:340px}
+.gal{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:8px}
+.gal>img{display:block;min-width:0;min-height:0;overflow:hidden}
 .gal.rows{grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(3,minmax(0,1fr))}
 .gal.g3{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr))}
 .gal.g3 img:first-child{grid-row:1/3}
@@ -211,7 +213,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding
 .nums{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .certs{grid-template-columns:repeat(2,minmax(0,1fr))}.research{grid-template-columns:minmax(0,1fr)}}
 .hero{}
-@media(max-width:760px){.case{grid-template-columns:minmax(0,1fr)}.case:nth-child(even) .gal{order:0}.gal{min-height:340px}.gal.rows{min-height:420px}.hero{grid-template-columns:minmax(0,1fr)}.stage{max-width:520px}.pillars,.skills,.exp,.contact{grid-template-columns:minmax(0,1fr)}.skills .card.big,.skills .card.ai{grid-column:auto}.aig{grid-template-columns:minmax(0,1fr)}.links{order:3;width:100%;justify-content:space-between;overflow-x:auto;flex-wrap:nowrap}.links a{flex:none;padding:8px 10px}}
+@media(max-width:760px){.case{grid-template-columns:minmax(0,1fr)}.case:nth-child(even) .galw{order:0}.galw{min-height:380px}.hero{grid-template-columns:minmax(0,1fr)}.stage{max-width:520px}.pillars,.skills,.exp,.contact{grid-template-columns:minmax(0,1fr)}.skills .card.big,.skills .card.ai{grid-column:auto}.aig{grid-template-columns:minmax(0,1fr)}.links{order:3;width:100%;justify-content:space-between;overflow-x:auto;flex-wrap:nowrap}.links a{flex:none;padding:8px 10px}}
 @media(max-width:600px){
 .hero{grid-template-columns:minmax(0,1fr)}.stage{margin-inline:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.photo{grid-column:1/-1}.sticker{position:static;max-width:none;padding:10px 14px}.sticker strong{font-size:28px;white-space:normal}.s1{transform:rotate(-2deg);animation:none}.s2{transform:rotate(2deg)}
 .grid,.certs{grid-template-columns:minmax(0,1fr)}.work.wide{grid-column:auto}.work.wide .pic{height:200px}
@@ -314,7 +316,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding
     <div class="head"><div><h2 id="wh" class="serif">Case studies</h2><p class="sub">Four roles, one project each in depth: the problem, what I did, what the data showed and the result.</p></div></div>
     <div class="cases">
       <article class="case">
-        <div class="gal g3"><img src="klh-2.webp" alt="Instagram post quoting a neighbourhood head about piled-up waste"><img src="klh-1.webp" alt="Jakarta vs Everybody Sampah post"><img src="klh-3.webp" alt="Illustrated post of two residents walking"></div>
+        <div class="galw"><div class="gal g3"><img src="klh-2.webp" alt="Instagram post quoting a neighbourhood head about piled-up waste"><img src="klh-1.webp" alt="Jakarta vs Everybody Sampah post"><img src="klh-3.webp" alt="Illustrated post of two residents walking"></div></div>
         <div class="ctext">
           <div class="tags"><span class="chip">Waste Crisis Center, Ministry of Environment</span><span class="chip">2026 – now</span></div>
           <h3>Making waste education travel further</h3>
@@ -328,7 +330,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding
         </div>
       </article>
       <article class="case">
-        <div class="gal g4"><img src="email-2.webp" alt="Deltadata webinar email newsletter"><img src="linkedin.webp" alt="Deltadata LinkedIn post: Meet Aysia, from UI/UX intern to employee"><img class="c" src="deltadata-ig.webp" alt="Instagram insights for Deltadata"><img class="c" src="linkedin-admin.webp" alt="Deltadata LinkedIn page admin view with a post by Jihan Atsilah Siregar"></div>
+        <div class="galw"><div class="gal g4"><img src="email-2.webp" alt="Deltadata webinar email newsletter"><img src="linkedin.webp" alt="Deltadata LinkedIn post: Meet Aysia, from UI/UX intern to employee"><img class="c" src="deltadata-ig.webp" alt="Instagram insights for Deltadata"><img class="c" src="linkedin-admin.webp" alt="Deltadata LinkedIn page admin view with a post by Jihan Atsilah Siregar"></div></div>
         <div class="ctext">
           <div class="tags"><span class="chip">Deltadata Mandiri</span><span class="chip">2024 – 2026</span></div>
           <h3>Growing an IT company's reach across four channels</h3>
@@ -341,7 +343,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding
         </div>
       </article>
       <article class="case">
-        <div class="gal rows"><img src="mnc-looker-blur.webp" alt="Blurred media monitoring dashboard"><img src="mnc-3-blur.webp" alt="Blurred weekly report cover"><img src="mnc-2-blur.webp" alt="Blurred campaign deck cover"><span class="conf">Internal documents, blurred</span></div>
+        <div class="galw"><div class="gal rows"><img src="mnc-looker-blur.webp" alt="Blurred media monitoring dashboard"><img src="mnc-3-blur.webp" alt="Blurred weekly report cover"><img src="mnc-2-blur.webp" alt="Blurred campaign deck cover"><span class="conf">Internal documents, blurred</span></div></div>
         <div class="ctext">
           <div class="tags"><span class="chip">MNC Group</span><span class="chip">2023 – 2024</span></div>
           <h3>Keeping leadership ahead of the media cycle</h3>
@@ -354,7 +356,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding
         </div>
       </article>
       <article class="case">
-        <div class="gal g3"><img src="easea-product.webp" alt="Product video still of the Rebecca Corduroy Jacket"><img src="easea-campaign-2.webp" alt="Self-love campaign post"><img src="tiktok-1.webp" alt="TikTok video with 501.1K views"></div>
+        <div class="galw"><div class="gal g3"><img src="easea-product.webp" alt="Product video still of the Rebecca Corduroy Jacket"><img src="easea-campaign-2.webp" alt="Self-love campaign post"><img src="tiktok-1.webp" alt="TikTok video with 501.1K views"></div></div>
         <div class="ctext">
           <div class="tags"><span class="chip">Easea.co</span><span class="chip">2021 – 2023</span></div>
           <h3>Growing a fashion brand from 4K to 18K followers</h3>
